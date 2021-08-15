@@ -1,0 +1,12 @@
+@use 'config';
+
+@each $name, $shades in config.$colors {
+	@each $shade, $color in $shades {
+		.clr-#{$name}-#{$shade} {
+			color: $color;
+		}
+		.bg-#{$name}-#{$shade} {
+			background-color: $color;
+		}
+	}
+}

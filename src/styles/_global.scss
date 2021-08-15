@@ -1,3 +1,13 @@
+@use 'config';
+
+:root {
+	@each $name, $shades in config.$colors {
+		@each $shade, $color in $shades {
+			--#{$name}-#{$shade}: #{$color};
+		}
+	}
+}
+
 *,
 *::before,
 *::after {
